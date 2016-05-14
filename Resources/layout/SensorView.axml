@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingBottom="10dp">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sensorIcon"
+        android:minWidth="64dp"
+        android:minHeight="64dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:text="Large Text with sensor name"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sensorName" />
+        <TextView
+            android:text="Small Text with some description of sensor that may overflow into few lines"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sensorDesc" />
+    </LinearLayout>
+</LinearLayout>

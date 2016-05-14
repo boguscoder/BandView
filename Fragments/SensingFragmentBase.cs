@@ -26,7 +26,7 @@
 			base.OnResume();
 
 			if (Sensor != null) // No Null-Conditional Operator here?
-				Sensor.ReadingChanged += (sender, e) => Activity.RunOnUiThread(
+				Sensor.ReadingChanged += (sender, e) => Activity?.RunOnUiThread(
 															() => OnSensorData(e.SensorReading));
 
 			await (Sensor?.StartReadingsAsync() ?? Task.CompletedTask);

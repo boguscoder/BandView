@@ -6,6 +6,12 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:gravity="center">
+    <TextView
+        android:text="@string/command_light"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
     <ImageView
         android:id="@+id/levelImg"
         android:src="@drawable/ambient_light"

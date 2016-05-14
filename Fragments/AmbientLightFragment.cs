@@ -1,5 +1,7 @@
 ﻿namespace bandview
 {
+	using System;
+
 	using Android.Widget;
 	using Android.Graphics;
 
@@ -15,7 +17,8 @@
 		[InjectView(Resource.Id.levelImg)]
 		ImageView _levelImg;
 
-		private const int _pivotPoint = 1000; 
+		private const int _coldPoint = 1000;
+		private const int _hotPoint  = 10000;
 
 		private Color _imgColor;
 		private Color _txtColor;
@@ -26,13 +29,12 @@
 		{
 			_level.Text = $"{data.Brightness}";
 
-			int r = data.Brightness < _pivotPoint ? (byte)((double)data.Brightness / _pivotPoint * 255) : 255;
+			// TODO: sensor range is smth like 0 - 25000, would be nice to map it nicely to color temperature
+			int r = data.Brightness < _coldPoint ? Math.Min((byte)((double)data.Brightness / _coldPoint * 255), (byte) 255) : 255;
 			int g = r;
-			int b = 0;
+			int b = data.Brightness < _coldPoint ? 0 : Math.Min((byte)((double)data.Brightness / _hotPoint * 255), (byte) 255);
 
-			int iR = 255 - r;
-			int iG = 255 - g;
-			int iB = 255 - b;
+			int iR = 255 - r, iG = 255 - g, iB = 255 - b;
 
 			_imgColor = Color.Argb(255, r, g, b);
 			_txtColor = Color.Argb(255, iR, iG, iB);

@@ -28,8 +28,39 @@ namespace bandview
 		{
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f070001
+			public const int sensor_descriptions = 2131165185;
+			
+			// aapt resource value: 0x7f070000
+			public const int sensor_names = 2131165184;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
+			
+			// aapt resource value: 0x7f010000
+			public const int layoutManager = 2130771968;
+			
+			// aapt resource value: 0x7f010002
+			public const int reverseLayout = 2130771970;
+			
+			// aapt resource value: 0x7f010001
+			public const int spanCount = 2130771969;
+			
+			// aapt resource value: 0x7f010003
+			public const int stackFromEnd = 2130771971;
 			
 			static Attribute()
 			{
@@ -37,6 +68,28 @@ namespace bandview
 			}
 			
 			private Attribute()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int item_touch_helper_swipe_escape_max_velocity = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int item_touch_helper_swipe_escape_velocity = 2131034114;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
 			{
 			}
 		}
@@ -60,23 +113,38 @@ namespace bandview
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int level = 2131099649;
-			
 			// aapt resource value: 0x7f060000
-			public const int levelImg = 2131099648;
+			public const int item_touch_helper_previous_elevation = 2131099648;
 			
 			// aapt resource value: 0x7f060002
-			public const int progress = 2131099650;
+			public const int level = 2131099650;
 			
-			// aapt resource value: 0x7f060004
-			public const int progressBar = 2131099652;
+			// aapt resource value: 0x7f060001
+			public const int levelImg = 2131099649;
 			
 			// aapt resource value: 0x7f060005
-			public const int sensorContainer = 2131099653;
+			public const int progressBar = 2131099653;
 			
 			// aapt resource value: 0x7f060003
-			public const int statusText = 2131099651;
+			public const int selector = 2131099651;
+			
+			// aapt resource value: 0x7f060007
+			public const int sensorContainer = 2131099655;
+			
+			// aapt resource value: 0x7f06000a
+			public const int sensorDesc = 2131099658;
+			
+			// aapt resource value: 0x7f060008
+			public const int sensorIcon = 2131099656;
+			
+			// aapt resource value: 0x7f060006
+			public const int sensorList = 2131099654;
+			
+			// aapt resource value: 0x7f060009
+			public const int sensorName = 2131099657;
+			
+			// aapt resource value: 0x7f060004
+			public const int statusText = 2131099652;
 			
 			static Id()
 			{
@@ -96,6 +164,9 @@ namespace bandview
 			
 			// aapt resource value: 0x7f040001
 			public const int Main = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int SensorView = 2130968578;
 			
 			static Layout()
 			{
@@ -126,23 +197,32 @@ namespace bandview
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int app_name = 2131034112;
+			// aapt resource value: 0x7f080000
+			public const int app_name = 2131230720;
 			
-			// aapt resource value: 0x7f050004
-			public const int status_connected = 2131034116;
+			// aapt resource value: 0x7f080008
+			public const int command_light = 2131230728;
 			
-			// aapt resource value: 0x7f050003
-			public const int status_connecting = 2131034115;
+			// aapt resource value: 0x7f080004
+			public const int status_connected = 2131230724;
 			
-			// aapt resource value: 0x7f050005
-			public const int status_failed = 2131034117;
+			// aapt resource value: 0x7f080003
+			public const int status_connecting = 2131230723;
 			
-			// aapt resource value: 0x7f050002
-			public const int status_notfound = 2131034114;
+			// aapt resource value: 0x7f080005
+			public const int status_failed = 2131230725;
 			
-			// aapt resource value: 0x7f050001
-			public const int status_searching = 2131034113;
+			// aapt resource value: 0x7f080007
+			public const int status_noimpl = 2131230727;
+			
+			// aapt resource value: 0x7f080002
+			public const int status_notfound = 2131230722;
+			
+			// aapt resource value: 0x7f080006
+			public const int status_ready = 2131230726;
+			
+			// aapt resource value: 0x7f080001
+			public const int status_searching = 2131230721;
 			
 			static String()
 			{
@@ -150,6 +230,42 @@ namespace bandview
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Styleable
+		{
+			
+			public static int[] RecyclerView = new int[]
+			{
+					16842948,
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971};
+			
+			// aapt resource value: 0
+			public const int RecyclerView_android_orientation = 0;
+			
+			// aapt resource value: 1
+			public const int RecyclerView_layoutManager = 1;
+			
+			// aapt resource value: 3
+			public const int RecyclerView_reverseLayout = 3;
+			
+			// aapt resource value: 2
+			public const int RecyclerView_spanCount = 2;
+			
+			// aapt resource value: 4
+			public const int RecyclerView_stackFromEnd = 4;
+			
+			static Styleable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Styleable()
 			{
 			}
 		}

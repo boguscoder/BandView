@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="sensor_names">
+		<item>Accelerometer</item>
+		<item>Heart Rate</item>
+		<item>Pedometer</item>
+		<item>RR Interval</item>
+		<item>Skin Temperature</item>
+		<item>Ultraviolet Light</item>
+		<item>Galvanic Skin Response</item>
+		<item>Altimeter</item>
+		<item>Ambient Light</item>
+		<item>Barometer</item>
+		<item>Calories</item>
+		<item>Gyroscope</item>
+		<item>Distance</item>
+	</string-array>
+
+	<string-array name="sensor_descriptions">
+		<item>Provides X, Y, and Z acceleration in meters per second squared (m/s²) units</item>
+		<item>Provides the number of beats per minute, also indicates if the heart rate sensor is fully locked onto the wearer’s heart rate</item>
+		<item>Provides the total number of steps the wearer has taken</item>
+		<item>Provides the interval in seconds between the last two continuous heart beats</item>
+		<item>Provides the current skin temperature of the wearer in degrees Celsius</item>
+		<item>Provides the current ultra violet radiation exposure intensity</item>
+		<item>Provides the current skin resistance of the wearer in kohms</item>
+		<item>Provides current elevation data like total gain/loss, steps ascended/descended, flights ascended/descended, and elevation rate</item>
+		<item>Provides the current light intensity (illuminance) in lux (Lumes/m²)</item>
+		<item>Provides the current raw air pressure in hPa (hectopascals) and raw temperature in degrees Celsius</item>
+		<item>Provides the total number of calories the wearer has burned</item>
+		<item>Provides X, Y, and Z angular velocity in degrees per second (°/sec) units</item>
+		<item>Provides the total distance in centimeters, current speed in centimeters per second (cm/s), current pace in milliseconds per meter (ms/m), and the current pedometer mode (such as walking or running)</item>
+	</string-array>
+</resources>

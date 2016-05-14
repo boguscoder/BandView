@@ -19,9 +19,7 @@
 		public static async Task<bool> InitializeSensors(Context ctx, Action<string> progressReporter = null)
 		{
 			var bandClientManager = BandClientManager.Instance;
-			// query the service for paired devices
 			var pairedBands = await bandClientManager.GetPairedBandsAsync();
-			// connect to the first device
 			var bandInfo = pairedBands.FirstOrDefault();
 
 			if (bandInfo == null)
@@ -31,7 +29,6 @@
 			}
 
 			await Task.Delay(StepDelay); // purely for display purposes 
-
 			progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connecting)} {bandInfo.Name}");
 
 			var bandClient = await bandClientManager.ConnectAsync(bandInfo);
@@ -47,6 +44,8 @@
 			progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connected)} {bandInfo.Name}");
 
 			Container.RegisterInstance(typeof(BandSensorBase<BandAmbientLightReading>), string.Empty, bandClient.SensorManager.AmbientLight, new ContainerControlledLifetimeManager());
+
+			await Task.Delay(StepDelay); // ditto
 
 			return true;
 		}
