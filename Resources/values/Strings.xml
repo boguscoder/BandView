@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Band View</string>
+	<string name="status_searching">Searching for connected MS Bands...</string>
+	<string name="status_notfound">No MS Bands found ): </string>
+	<string name="status_connecting">Connecting to</string>
+	<string name="status_connected">Connected to</string>
+	<string name="status_failed">Failed to connect ):</string>
+</resources>
