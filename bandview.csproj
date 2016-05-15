@@ -74,10 +74,12 @@
     <Compile Include="Activities\BandViewActivity.cs" />
     <Compile Include="Sensors\SensorsAdapter.cs" />
     <Compile Include="Sensors\SensorViewHolder.cs" />
+    <Compile Include="Fragments\RawSensorFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -100,6 +102,7 @@
     <AndroidResource Include="Resources\drawable\distance.png" />
     <AndroidResource Include="Resources\drawable\gyro.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\band.png" />
+    <AndroidResource Include="Resources\layout\RawSensor.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
