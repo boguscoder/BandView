@@ -82,11 +82,24 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\layout\AmbientLight.axml" />
     <AndroidResource Include="Resources\drawable\ambient_light.png" />
     <AndroidResource Include="Resources\layout\SensorView.axml" />
     <AndroidResource Include="Resources\values\Sensors.xml" />
+    <AndroidResource Include="Resources\drawable\accelerometer.png" />
+    <AndroidResource Include="Resources\drawable\heartrate.png" />
+    <AndroidResource Include="Resources\drawable\gsr.png" />
+    <AndroidResource Include="Resources\drawable\pedometer.png" />
+    <AndroidResource Include="Resources\drawable\rr.png" />
+    <AndroidResource Include="Resources\drawable\temp.png" />
+    <AndroidResource Include="Resources\drawable\uv.png" />
+    <AndroidResource Include="Resources\drawable\alt.png" />
+    <AndroidResource Include="Resources\drawable\ambient.png" />
+    <AndroidResource Include="Resources\drawable\barometer.png" />
+    <AndroidResource Include="Resources\drawable\calories.png" />
+    <AndroidResource Include="Resources\drawable\distance.png" />
+    <AndroidResource Include="Resources\drawable\gyro.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\band.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

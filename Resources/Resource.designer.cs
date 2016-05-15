@@ -34,6 +34,9 @@ namespace bandview
 			// aapt resource value: 0x7f070001
 			public const int sensor_descriptions = 2131165185;
 			
+			// aapt resource value: 0x7f070002
+			public const int sensor_icons = 2131165186;
+			
 			// aapt resource value: 0x7f070000
 			public const int sensor_names = 2131165184;
 			
@@ -98,7 +101,46 @@ namespace bandview
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ambient_light = 2130837504;
+			public const int accelerometer = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int alt = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int ambient = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int ambient_light = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int barometer = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int calories = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int distance = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int gsr = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int gyro = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int heartrate = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int pedometer = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int rr = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int temp = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int uv = 2130837517;
 			
 			static Drawable()
 			{
@@ -182,7 +224,7 @@ namespace bandview
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Icon = 2130903040;
+			public const int band = 2130903040;
 			
 			static Mipmap()
 			{
@@ -200,8 +242,8 @@ namespace bandview
 			// aapt resource value: 0x7f080000
 			public const int app_name = 2131230720;
 			
-			// aapt resource value: 0x7f080008
-			public const int command_light = 2131230728;
+			// aapt resource value: 0x7f080007
+			public const int command_light = 2131230727;
 			
 			// aapt resource value: 0x7f080004
 			public const int status_connected = 2131230724;
@@ -212,14 +254,11 @@ namespace bandview
 			// aapt resource value: 0x7f080005
 			public const int status_failed = 2131230725;
 			
-			// aapt resource value: 0x7f080007
-			public const int status_noimpl = 2131230727;
+			// aapt resource value: 0x7f080006
+			public const int status_noimpl = 2131230726;
 			
 			// aapt resource value: 0x7f080002
 			public const int status_notfound = 2131230722;
-			
-			// aapt resource value: 0x7f080006
-			public const int status_ready = 2131230726;
 			
 			// aapt resource value: 0x7f080001
 			public const int status_searching = 2131230721;

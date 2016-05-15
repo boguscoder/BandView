@@ -31,4 +31,20 @@
 		<item>Provides X, Y, and Z angular velocity in degrees per second (°/sec) units</item>
 		<item>Provides the total distance in centimeters, current speed in centimeters per second (cm/s), current pace in milliseconds per meter (ms/m), and the current pedometer mode (such as walking or running)</item>
 	</string-array>
+
+	 <array name="sensor_icons">
+        <item>@drawable/accelerometer</item>
+        <item>@drawable/heartrate</item>
+        <item>@drawable/pedometer</item>
+        <item>@drawable/rr</item>
+        <item>@drawable/temp</item>
+        <item>@drawable/uv</item>
+        <item>@drawable/gsr</item>
+        <item>@drawable/alt</item>
+        <item>@drawable/ambient</item>
+        <item>@drawable/barometer</item>
+        <item>@drawable/calories</item>
+        <item>@drawable/gyro</item>
+        <item>@drawable/distance</item>
+	</array>
 </resources>

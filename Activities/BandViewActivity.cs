@@ -10,7 +10,7 @@
 
 	using Com.Lilarcor.Cheeseknife;
 
-	[Activity(Label = "bandview", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/band")]
 	public class BandViewActivity : Activity
 	{
 		[InjectView(Resource.Id.statusText)]
@@ -38,7 +38,6 @@
 
 			_progressBar.Visibility = ViewStates.Gone;
 			_sensorList.Visibility = ViewStates.Visible;
-			_status.SetText(Resource.String.status_ready);
 
 			var adapter = new SensorsAdapter(this);
 			adapter.ItemClick += (sender, pos) => ShowSensorPage((SensorType)pos);

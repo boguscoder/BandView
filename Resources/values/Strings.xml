@@ -6,7 +6,6 @@
 	<string name="status_connecting">Connecting to</string>
 	<string name="status_connected">Connected to</string>
 	<string name="status_failed">Failed to connect ):</string>
-	<string name="status_ready">Pick a sensor</string>
 	<string name="status_noimpl">This sensor view is coming soon (:</string>
 	<string name="command_light">Bring band to light...</string>
 </resources>

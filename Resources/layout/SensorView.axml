@@ -4,25 +4,27 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:paddingBottom="10dp">
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
     <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:src="@drawable/calories"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:id="@+id/sensorIcon"
-        android:minWidth="64dp"
-        android:minHeight="64dp" />
+        android:padding="5dp" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="5dp">
         <TextView
             android:text="Large Text with sensor name"
             android:textAppearance="@android:style/TextAppearance.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/sensorName" />
+            android:id="@+id/sensorName"
+            android:paddingBottom="5dp" />
         <TextView
             android:text="Small Text with some description of sensor that may overflow into few lines"
             android:textAppearance="@android:style/TextAppearance.Small"

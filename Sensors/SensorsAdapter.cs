@@ -3,6 +3,7 @@
 	using System;
 
 	using Android.Content;
+	using Android.Content.Res;
 	using Android.Support.V7.Widget;
 	using Android.Views;
 
@@ -10,6 +11,7 @@
 	{
 		string[] _names;
 		string[] _descs;
+		TypedArray _icons;
 
 		public override int ItemCount => _names.Length;
 
@@ -19,6 +21,7 @@
 		{
 			_names = ctx.Resources.GetStringArray(Resource.Array.sensor_names);
 			_descs = ctx.Resources.GetStringArray(Resource.Array.sensor_descriptions);
+			_icons = ctx.Resources.ObtainTypedArray(Resource.Array.sensor_icons);
 		}
 
 		public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -27,6 +30,7 @@
 
 			sensor.Name.Text = _names[position];
 			sensor.Desc.Text = _descs[position];
+			sensor.Icon.SetImageDrawable(_icons.GetDrawable(position));
 		}
 
 		public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
