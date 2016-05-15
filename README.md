@@ -1,5 +1,6 @@
 # BandView
 Test app for Android written in C#/Xamarin that reveals all MS Band sensor information 
+
 Work is in early stages now... 
 
 POIs:
