@@ -44,7 +44,6 @@
 			progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connected)} {bandInfo.Name}");
 
 			BindSensors(bandClient);
-			await Task.Delay(StepDelay); // ditto
 
 			return true;
 		}

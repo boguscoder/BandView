@@ -25,11 +25,19 @@
 		{
 			base.OnResume();
 
-			if (Sensor != null) // No Null-Conditional Operator here?
-				Sensor.ReadingChanged += (sender, e) => Activity?.RunOnUiThread(
-															() => OnSensorData(e.SensorReading));
+			var consenter = Sensor as IUserConsentingBandSensor<T>;
+			bool allowed = consenter != null ? await consenter.RequestUserConsent() : true;
 
-			await (Sensor?.StartReadingsAsync() ?? Task.CompletedTask);
+			if (allowed)
+			{
+				if (Sensor != null)
+				{
+					Sensor.ReadingChanged += (sender, e) => Activity?.RunOnUiThread(
+																() => OnSensorData(e.SensorReading));
+
+					await Sensor.StartReadingsAsync();
+				}
+			}
 		}
 
 		public override async void OnPause()
