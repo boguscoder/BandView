@@ -28,22 +28,38 @@
 		[InjectView(Resource.Id.sensorContainer)]
 		View _sensorView;
 
-		protected override async void OnCreate(Bundle savedInstanceState)
+		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Main);
 			Cheeseknife.Inject(this);
+		}
 
-			await App.InitializeSensors(this, (progress) => RunOnUiThread(() => _status.Text = progress ) );
+		protected override async void OnResume()
+		{
+			base.OnResume();
+
+			bool success = await App.InitializeSensors(this, (progress) => RunOnUiThread(() => _status.Text = progress));
 
 			_progressBar.Visibility = ViewStates.Gone;
 			_sensorList.Visibility = ViewStates.Visible;
+
+			if (!success)
+				return;
 
 			var adapter = new SensorsAdapter(this);
 			adapter.ItemClick += (sender, pos) => ShowSensorPage((SensorType)pos);
 
 	        _sensorList.SetAdapter(adapter);
 			_sensorList.SetLayoutManager(new LinearLayoutManager(this));
+		}
+
+		protected override void OnPause()
+		{
+			base.OnPause();
+
+			while (FragmentManager.BackStackEntryCount > 0)
+				FragmentManager.PopBackStackImmediate();
 		}
 
 		private void ShowSensorPage(SensorType type)
@@ -53,6 +69,7 @@
 				var fragment = FragmentFactory.GetSensingFragment(type);
 				var fragmentTransaction = FragmentManager.BeginTransaction();
 				fragmentTransaction.Replace(Resource.Id.sensorContainer, fragment);
+				fragmentTransaction.AddToBackStack(null);
 				fragmentTransaction.Commit();
 
 				_sensorView.Visibility = ViewStates.Visible;
@@ -66,8 +83,11 @@
 
 		public override void OnBackPressed()
 		{
-			if (_sensorView.Visibility == ViewStates.Visible)
+			// though its not optimal to kill fragments like this on every backpress
+			// its more convinient to manage sensors if fragments are destroyed asap
+			if (FragmentManager.BackStackEntryCount > 0)
 			{
+				FragmentManager.PopBackStack();
 				_sensorView.Visibility = ViewStates.Gone;
 				_selector.Visibility = ViewStates.Visible;
 			}

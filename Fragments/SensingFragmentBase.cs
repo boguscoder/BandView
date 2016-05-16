@@ -21,9 +21,9 @@
 			return view;
 		}
 
-		public override async void OnResume()
+		public override async void OnAttach(Android.Content.Context context)
 		{
-			base.OnResume();
+			base.OnAttach(context);
 
 			var consenter = Sensor as IUserConsentingBandSensor<T>;
 			bool allowed = consenter != null ? await consenter.RequestUserConsent() : true;
@@ -40,9 +40,9 @@
 			}
 		}
 
-		public override async void OnPause()
+		public override async void OnDetach()
 		{
-			base.OnPause();
+			base.OnDetach();
 			await (Sensor?.StopReadingsAsync() ?? Task.CompletedTask);
 		}
 

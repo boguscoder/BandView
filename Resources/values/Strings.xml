@@ -2,10 +2,11 @@
 <resources>
 	<string name="app_name">Band View</string>
 	<string name="status_searching">Searching for connected MS Bands...</string>
-	<string name="status_notfound">No MS Bands found ): </string>
+	<string name="status_notfound">No MS Bands found ):</string>
 	<string name="status_connecting">Connecting to</string>
 	<string name="status_connected">Connected to</string>
 	<string name="status_failed">Failed to connect ):</string>
 	<string name="status_noimpl">This sensor view is coming soon (:</string>
+	<string name="status_waiting">Waiting for raw data...</string>
 	<string name="command_light">Bring band to light...</string>
 </resources>

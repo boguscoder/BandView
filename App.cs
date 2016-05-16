@@ -12,10 +12,11 @@
 
 	public static class App
 	{
-		private const int StepDelay = 700; 
+		private const int ConnectTimeout = 10000;
 
 		public static UnityContainer Container { get; } = new UnityContainer();
 
+		// no thread-safety guarantees here, call only from UI thread
 		public static async Task<bool> InitializeSensors(Context ctx, Action<string> progressReporter = null)
 		{
 			var bandClientManager = BandClientManager.Instance;
@@ -28,24 +29,31 @@
 				return false;
 			}
 
-			await Task.Delay(StepDelay); // purely for display purposes 
 			progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connecting)} {bandInfo.Name}");
 
-			var bandClient = await bandClientManager.ConnectAsync(bandInfo);
+			var connectTask = bandClientManager.ConnectAsync(bandInfo);
+		
+			if (await Task.WhenAny(connectTask, Task.Delay(ConnectTimeout)) == connectTask)
+			{
+				var bandClient = await connectTask;
 
-			await Task.Delay(StepDelay); // ditto
+				if (bandClient == null)
+				{
+					progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_failed)}");
+					return false;
+				}
 
-			if (bandClient == null)
+				progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connected)} {bandInfo.Name}");
+
+				BindSensors(bandClient);
+
+				return true;
+			}
+			else
 			{
 				progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_failed)}");
 				return false;
 			}
-
-			progressReporter?.Invoke($"{ctx.GetString(Resource.String.status_connected)} {bandInfo.Name}");
-
-			BindSensors(bandClient);
-
-			return true;
 		}
 
 		private static void BindSensors(BandClient bandClient)

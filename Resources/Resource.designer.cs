@@ -248,8 +248,8 @@ namespace bandview
 			// aapt resource value: 0x7f080000
 			public const int app_name = 2131230720;
 			
-			// aapt resource value: 0x7f080007
-			public const int command_light = 2131230727;
+			// aapt resource value: 0x7f080008
+			public const int command_light = 2131230728;
 			
 			// aapt resource value: 0x7f080004
 			public const int status_connected = 2131230724;
@@ -268,6 +268,9 @@ namespace bandview
 			
 			// aapt resource value: 0x7f080001
 			public const int status_searching = 2131230721;
+			
+			// aapt resource value: 0x7f080007
+			public const int status_waiting = 2131230727;
 			
 			static String()
 			{
