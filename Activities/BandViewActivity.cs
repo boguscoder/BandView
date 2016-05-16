@@ -3,6 +3,7 @@
 	using System;
 
 	using Android.App;
+	using Android.Content.PM;
 	using Android.OS;
 	using Android.Support.V7.Widget;
 	using Android.Views;
@@ -10,7 +11,7 @@
 
 	using Com.Lilarcor.Cheeseknife;
 
-	[Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/band")]
+	[Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/band", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class BandViewActivity : Activity
 	{
 		[InjectView(Resource.Id.statusText)]
@@ -28,16 +29,11 @@
 		[InjectView(Resource.Id.sensorContainer)]
 		View _sensorView;
 
-		protected override void OnCreate(Bundle savedInstanceState)
+		protected override async void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Main);
 			Cheeseknife.Inject(this);
-		}
-
-		protected override async void OnResume()
-		{
-			base.OnResume();
 
 			bool success = await App.InitializeSensors(this, (progress) => RunOnUiThread(() => _status.Text = progress));
 
@@ -54,14 +50,6 @@
 			_sensorList.SetLayoutManager(new LinearLayoutManager(this));
 		}
 
-		protected override void OnPause()
-		{
-			base.OnPause();
-
-			while (FragmentManager.BackStackEntryCount > 0)
-				FragmentManager.PopBackStackImmediate();
-		}
-
 		private void ShowSensorPage(SensorType type)
 		{
 			try
@@ -69,7 +57,6 @@
 				var fragment = FragmentFactory.GetSensingFragment(type);
 				var fragmentTransaction = FragmentManager.BeginTransaction();
 				fragmentTransaction.Replace(Resource.Id.sensorContainer, fragment);
-				fragmentTransaction.AddToBackStack(null);
 				fragmentTransaction.Commit();
 
 				_sensorView.Visibility = ViewStates.Visible;
@@ -81,13 +68,26 @@
 			}
 		}
 
+		private bool HideSensorPage()
+		{
+			var frag = FragmentManager.FindFragmentById(Resource.Id.sensorContainer);
+
+			if (frag != null)
+			{
+				var fragmentTransaction = FragmentManager.BeginTransaction();
+				fragmentTransaction.Remove(frag);
+				fragmentTransaction.Commit();
+			}
+
+			return frag != null;
+		}
+
 		public override void OnBackPressed()
 		{
 			// though its not optimal to kill fragments like this on every backpress
 			// its more convinient to manage sensors if fragments are destroyed asap
-			if (FragmentManager.BackStackEntryCount > 0)
+			if (HideSensorPage())
 			{
-				FragmentManager.PopBackStack();
 				_sensorView.Visibility = ViewStates.Gone;
 				_selector.Visibility = ViewStates.Visible;
 			}
