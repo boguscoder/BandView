@@ -12,8 +12,8 @@
 		{
 			switch (type)
 			{
-				case SensorType.HeartRate:			return new RawSensorFragment<BandHeartRateReading>();
 				case SensorType.Accelerometer:		return new RawSensorFragment<BandAccelerometerReading>();
+				case SensorType.HeartRate: 			return new HeartRateFragment();
 				case SensorType.Pedometer:			return new RawSensorFragment<BandPedometerReading>();
 				case SensorType.RRInterval:			return new RawSensorFragment<BandRRIntervalReading>();
 				case SensorType.SkinTemperature:	return new RawSensorFragment<BandSkinTemperatureReading>();

@@ -75,6 +75,7 @@
     <Compile Include="Sensors\SensorsAdapter.cs" />
     <Compile Include="Sensors\SensorViewHolder.cs" />
     <Compile Include="Fragments\RawSensorFragment.cs" />
+    <Compile Include="Fragments\HeartRateFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -103,6 +104,8 @@
     <AndroidResource Include="Resources\drawable\gyro.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\band.png" />
     <AndroidResource Include="Resources\layout\RawSensor.axml" />
+    <AndroidResource Include="Resources\layout\HeartRate.xml" />
+    <AndroidResource Include="Resources\anim\heartbeat_anim.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -110,6 +113,7 @@
     <Folder Include="Fragments\" />
     <Folder Include="Sensors\" />
     <Folder Include="Activities\" />
+    <Folder Include="Resources\anim\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="cheeseknife">

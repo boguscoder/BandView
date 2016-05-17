@@ -38,10 +38,11 @@
 			bool success = await App.InitializeSensors(this, (progress) => RunOnUiThread(() => _status.Text = progress));
 
 			_progressBar.Visibility = ViewStates.Gone;
-			_sensorList.Visibility = ViewStates.Visible;
 
 			if (!success)
 				return;
+
+			_sensorList.Visibility = ViewStates.Visible;
 
 			var adapter = new SensorsAdapter(this);
 			adapter.ItemClick += (sender, pos) => ShowSensorPage((SensorType)pos);
