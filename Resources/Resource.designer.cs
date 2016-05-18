@@ -171,50 +171,53 @@ namespace bandview
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070007
+			public const int beats = 2131165191;
+			
 			// aapt resource value: 0x7f070005
-			public const int beats = 2131165189;
+			public const int command = 2131165189;
 			
-			// aapt resource value: 0x7f070003
-			public const int command = 2131165187;
+			// aapt resource value: 0x7f070001
+			public const int gl_view = 2131165185;
 			
-			// aapt resource value: 0x7f070004
-			public const int heart = 2131165188;
+			// aapt resource value: 0x7f070006
+			public const int heart = 2131165190;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070002
-			public const int level = 2131165186;
+			// aapt resource value: 0x7f070004
+			public const int level = 2131165188;
 			
-			// aapt resource value: 0x7f070001
-			public const int levelImg = 2131165185;
-			
-			// aapt resource value: 0x7f070008
-			public const int progressBar = 2131165192;
-			
-			// aapt resource value: 0x7f07000b
-			public const int raw_data = 2131165195;
-			
-			// aapt resource value: 0x7f070006
-			public const int selector = 2131165190;
+			// aapt resource value: 0x7f070003
+			public const int levelImg = 2131165187;
 			
 			// aapt resource value: 0x7f07000a
-			public const int sensorContainer = 2131165194;
+			public const int progressBar = 2131165194;
 			
-			// aapt resource value: 0x7f07000e
-			public const int sensorDesc = 2131165198;
+			// aapt resource value: 0x7f070002
+			public const int raw_data = 2131165186;
+			
+			// aapt resource value: 0x7f070008
+			public const int selector = 2131165192;
 			
 			// aapt resource value: 0x7f07000c
-			public const int sensorIcon = 2131165196;
+			public const int sensorContainer = 2131165196;
 			
-			// aapt resource value: 0x7f070009
-			public const int sensorList = 2131165193;
+			// aapt resource value: 0x7f07000f
+			public const int sensorDesc = 2131165199;
 			
 			// aapt resource value: 0x7f07000d
-			public const int sensorName = 2131165197;
+			public const int sensorIcon = 2131165197;
 			
-			// aapt resource value: 0x7f070007
-			public const int statusText = 2131165191;
+			// aapt resource value: 0x7f07000b
+			public const int sensorList = 2131165195;
+			
+			// aapt resource value: 0x7f07000e
+			public const int sensorName = 2131165198;
+			
+			// aapt resource value: 0x7f070009
+			public const int statusText = 2131165193;
 			
 			static Id()
 			{
@@ -230,19 +233,22 @@ namespace bandview
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int AmbientLight = 2130968576;
+			public const int Accelerometer = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int HeartRate = 2130968577;
+			public const int AmbientLight = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int Main = 2130968578;
+			public const int HeartRate = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int RawSensor = 2130968579;
+			public const int Main = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int SensorView = 2130968580;
+			public const int RawSensor = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int SensorView = 2130968581;
 			
 			static Layout()
 			{

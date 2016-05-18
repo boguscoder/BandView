@@ -12,7 +12,7 @@
 		{
 			switch (type)
 			{
-				case SensorType.Accelerometer:		return new RawSensorFragment<BandAccelerometerReading>();
+				case SensorType.Accelerometer:		return new AccelerometerFragment();
 				case SensorType.HeartRate: 			return new HeartRateFragment();
 				case SensorType.Pedometer:			return new RawSensorFragment<BandPedometerReading>();
 				case SensorType.RRInterval:			return new RawSensorFragment<BandRRIntervalReading>();

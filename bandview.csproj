@@ -27,7 +27,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
-<RunCodeAnalysis>true</RunCodeAnalysis>  </PropertyGroup>
+<RunCodeAnalysis>true</RunCodeAnalysis>  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
@@ -35,7 +36,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-<RunCodeAnalysis>true</RunCodeAnalysis>  </PropertyGroup>
+<RunCodeAnalysis>true</RunCodeAnalysis>  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+</PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -62,6 +64,7 @@
     <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
       <HintPath>packages\Xamarin.Android.Support.v7.RecyclerView.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
     </Reference>
+    <Reference Include="OpenTK-1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -76,6 +79,8 @@
     <Compile Include="Sensors\SensorViewHolder.cs" />
     <Compile Include="Fragments\RawSensorFragment.cs" />
     <Compile Include="Fragments\HeartRateFragment.cs" />
+    <Compile Include="Views\GlView.cs" />
+    <Compile Include="Fragments\AccelerometerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -106,6 +111,7 @@
     <AndroidResource Include="Resources\layout\RawSensor.axml" />
     <AndroidResource Include="Resources\layout\HeartRate.xml" />
     <AndroidResource Include="Resources\anim\heartbeat_anim.xml" />
+    <AndroidResource Include="Resources\layout\Accelerometer.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -114,6 +120,7 @@
     <Folder Include="Sensors\" />
     <Folder Include="Activities\" />
     <Folder Include="Resources\anim\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="cheeseknife">
