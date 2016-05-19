@@ -5,7 +5,7 @@ While work is in early stages this project is a sandbox for different Xamarin-co
 
 POIs:
 * RecyclerView
-* MS Band SDK (Note: this is not native but java-wrapped Xamarin version, kind lame =\ )
+* MS Band SDK (Note: this is not native but java-wrapped Xamarin version, kinda lame =\ )
 * Cheeseknife 
 * OxyPlot
 * OpenTK
