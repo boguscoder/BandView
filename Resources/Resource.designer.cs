@@ -171,38 +171,38 @@ namespace bandview
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070007
-			public const int beats = 2131165191;
+			// aapt resource value: 0x7f070006
+			public const int beats = 2131165190;
+			
+			// aapt resource value: 0x7f070004
+			public const int command = 2131165188;
 			
 			// aapt resource value: 0x7f070005
-			public const int command = 2131165189;
-			
-			// aapt resource value: 0x7f070001
-			public const int gl_view = 2131165185;
-			
-			// aapt resource value: 0x7f070006
-			public const int heart = 2131165190;
+			public const int heart = 2131165189;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070004
-			public const int level = 2131165188;
-			
 			// aapt resource value: 0x7f070003
-			public const int levelImg = 2131165187;
-			
-			// aapt resource value: 0x7f07000a
-			public const int progressBar = 2131165194;
+			public const int level = 2131165187;
 			
 			// aapt resource value: 0x7f070002
-			public const int raw_data = 2131165186;
+			public const int levelImg = 2131165186;
 			
-			// aapt resource value: 0x7f070008
-			public const int selector = 2131165192;
+			// aapt resource value: 0x7f070001
+			public const int plot_view = 2131165185;
+			
+			// aapt resource value: 0x7f070009
+			public const int progressBar = 2131165193;
 			
 			// aapt resource value: 0x7f07000c
-			public const int sensorContainer = 2131165196;
+			public const int raw_data = 2131165196;
+			
+			// aapt resource value: 0x7f070007
+			public const int selector = 2131165191;
+			
+			// aapt resource value: 0x7f07000b
+			public const int sensorContainer = 2131165195;
 			
 			// aapt resource value: 0x7f07000f
 			public const int sensorDesc = 2131165199;
@@ -210,14 +210,14 @@ namespace bandview
 			// aapt resource value: 0x7f07000d
 			public const int sensorIcon = 2131165197;
 			
-			// aapt resource value: 0x7f07000b
-			public const int sensorList = 2131165195;
+			// aapt resource value: 0x7f07000a
+			public const int sensorList = 2131165194;
 			
 			// aapt resource value: 0x7f07000e
 			public const int sensorName = 2131165198;
 			
-			// aapt resource value: 0x7f070009
-			public const int statusText = 2131165193;
+			// aapt resource value: 0x7f070008
+			public const int statusText = 2131165192;
 			
 			static Id()
 			{

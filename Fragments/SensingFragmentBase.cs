@@ -35,7 +35,7 @@
 					Sensor.ReadingChanged += (sender, e) => Activity?.RunOnUiThread(
 																() => OnSensorData(e.SensorReading));
 
-					await Sensor.StartReadingsAsync();
+					await Sensor.StartReadingsAsync(SampleRate);
 				}
 			}
 		}
@@ -47,6 +47,8 @@
 		}
 
 		protected abstract void OnSensorData(T data);
+
+		protected virtual BandSensorSampleRate SampleRate { get; } = BandSensorSampleRate.Ms16;
 	}
 }
 
