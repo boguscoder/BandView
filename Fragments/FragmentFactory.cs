@@ -4,7 +4,7 @@
 
 	using Android.App;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 
 	public static class FragmentFactory
 	{
@@ -14,17 +14,17 @@
 			{
 				case SensorType.Accelerometer:		return new AccelerometerFragment();
 				case SensorType.HeartRate: 			return new HeartRateFragment();
-				case SensorType.Pedometer:			return new RawSensorFragment<BandPedometerReading>();
-				case SensorType.RRInterval:			return new RawSensorFragment<BandRRIntervalReading>();
-				case SensorType.SkinTemperature:	return new RawSensorFragment<BandSkinTemperatureReading>();
-				case SensorType.UltravioletLight:	return new RawSensorFragment<BandUltravioletLightReading>();
-				case SensorType.Gsr:				return new RawSensorFragment<BandGsrReading>();
-				case SensorType.Altimeter:			return new RawSensorFragment<BandAltimeterReading>();
+				case SensorType.Pedometer:			return new RawSensorFragment<IBandPedometerReading>();
+				case SensorType.RRInterval:			return new RawSensorFragment<IBandRRIntervalReading>();
+				case SensorType.SkinTemperature:	return new RawSensorFragment<IBandSkinTemperatureReading>();
+				case SensorType.UltravioletLight:	return new RawSensorFragment<IBandUVReading>();
+				case SensorType.Gsr:				return new RawSensorFragment<IBandGsrReading>();
+				case SensorType.Altimeter:			return new RawSensorFragment<IBandAltimeterReading>();
 				case SensorType.AmbientLight:		return new AmbientLightFragment();
-				case SensorType.Barometer:			return new RawSensorFragment<BandBarometerReading>();
-				case SensorType.Calories:			return new RawSensorFragment<BandCaloriesReading>();
-				case SensorType.Gyroscope:			return new RawSensorFragment<BandGyroscopeReading>();
-				case SensorType.Distance:			return new RawSensorFragment<BandDistanceReading>();
+				case SensorType.Barometer:			return new RawSensorFragment<IBandBarometerReading>();
+				case SensorType.Calories:			return new RawSensorFragment<IBandCaloriesReading>();
+				case SensorType.Gyroscope:			return new RawSensorFragment<IBandGyroscopeReading>();
+				case SensorType.Distance:			return new RawSensorFragment<IBandDistanceReading>();
 
 				default:
 					throw new NotImplementedException();

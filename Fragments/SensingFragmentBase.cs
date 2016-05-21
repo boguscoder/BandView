@@ -6,11 +6,11 @@
 
 	using Com.Lilarcor.Cheeseknife;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 
 	public abstract class SensingFragmentBase <T> : Fragment where T : IBandSensorReading
 	{
-		protected BandSensorBase<T> Sensor { get; } = App.Container.Resolve(typeof(BandSensorBase<T>), null) as BandSensorBase<T>;
+		protected IBandSensor<T> Sensor { get; } = App.Container.Resolve(typeof(IBandSensor<T>), null) as IBandSensor<T>;
 
 		protected abstract int LayoutId { get; }
 
@@ -25,8 +25,8 @@
 		{
 			base.OnAttach(context);
 
-			var consenter = Sensor as IUserConsentingBandSensor<T>;
-			bool allowed = consenter != null ? await consenter.RequestUserConsent() : true;
+			var consent = Sensor.GetCurrentUserConsent();
+			bool allowed = consent == Microsoft.Band.UserConsent.Granted ? true : await Sensor.RequestUserConsentAsync();
 
 			if (allowed)
 			{
@@ -35,7 +35,7 @@
 					Sensor.ReadingChanged += (sender, e) => Activity?.RunOnUiThread(
 																() => OnSensorData(e.SensorReading));
 
-					await Sensor.StartReadingsAsync(SampleRate);
+					await Sensor.StartReadingsAsync();
 				}
 			}
 		}
@@ -47,8 +47,6 @@
 		}
 
 		protected abstract void OnSensorData(T data);
-
-		protected virtual BandSensorSampleRate SampleRate { get; } = BandSensorSampleRate.Ms16;
 	}
 }
 

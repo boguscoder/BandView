@@ -35,7 +35,7 @@
 			SetContentView(Resource.Layout.Main);
 			Cheeseknife.Inject(this);
 
-			bool success = await App.InitializeSensors(this, (progress) => RunOnUiThread(() => _status.Text = progress));
+			bool success = await App.ConnectToBand(this, (progress) => RunOnUiThread(() => _status.Text = progress));
 
 			_progressBar.Visibility = ViewStates.Gone;
 

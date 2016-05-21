@@ -1,17 +1,14 @@
 ﻿namespace bandview
 {
-	using System;
-
 	using Android.Widget;
 	using Android.Graphics;
 
 	using Com.Lilarcor.Cheeseknife;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 	using Android.Views.Animations;
-	using Android.Animation;
 
-	public class HeartRateFragment : SensingFragmentBase<BandHeartRateReading>
+	public class HeartRateFragment : SensingFragmentBase<IBandHeartRateReading>
 	{
 		[InjectView(Resource.Id.command)]
 		TextView _command;
@@ -50,7 +47,7 @@
 			};
 		}
 
-		protected override void OnSensorData(BandHeartRateReading data)
+		protected override void OnSensorData(IBandHeartRateReading data)
 		{
 			_beats.Text = data.HeartRate.ToString();
 			_heartSym.SetTextColor(data.Quality == HeartRateQuality.Locked ? LOCKED_COLOR : UNLOCKED_COLOR);

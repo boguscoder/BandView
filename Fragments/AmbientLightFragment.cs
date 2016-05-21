@@ -7,9 +7,9 @@
 
 	using Com.Lilarcor.Cheeseknife;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 
-	public class AmbientLightFragment : SensingFragmentBase<BandAmbientLightReading>
+	public class AmbientLightFragment : SensingFragmentBase<IBandAmbientLightReading>
 	{
 		[InjectView(Resource.Id.level)]
 		TextView _level;
@@ -25,7 +25,7 @@
 
 		protected override int LayoutId { get; } = Resource.Layout.AmbientLight;
 
-		protected override void OnSensorData(BandAmbientLightReading data)
+		protected override void OnSensorData(IBandAmbientLightReading data)
 		{
 			_level.Text = $"{data.Brightness}";
 

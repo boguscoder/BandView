@@ -4,7 +4,7 @@
 
 	using Com.Lilarcor.Cheeseknife;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 
 	public class RawSensorFragment <T> : SensingFragmentBase<T> where T : IBandSensorReading
 	{

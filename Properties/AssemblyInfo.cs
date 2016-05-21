@@ -27,4 +27,3 @@ using Android.App;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
-[assembly: UsesPermission(Microsoft.Band.BandClientManager.BindBandService)]

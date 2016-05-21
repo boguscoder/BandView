@@ -1,19 +1,15 @@
 ﻿namespace bandview
 {
-	using System;
-
-	using Android.Widget;
-
 	using Com.Lilarcor.Cheeseknife;
 
-	using Microsoft.Band.Portable.Sensors;
+	using Microsoft.Band.Sensors;
 
 	using OxyPlot;
 	using OxyPlot.Axes;
 	using OxyPlot.Series;
 	using OxyPlot.Xamarin.Android;
 
-	public class AccelerometerFragment: SensingFragmentBase<BandAccelerometerReading>
+	public class AccelerometerFragment: SensingFragmentBase<IBandAccelerometerReading>
 	{
 		[InjectView(Resource.Id.plot_view)]
 		PlotView _plotView; 
@@ -27,8 +23,6 @@
 
 		protected override int LayoutId { get; } = Resource.Layout.Accelerometer;
 
-		protected override BandSensorSampleRate SampleRate { get; } = BandSensorSampleRate.Ms128;
-
 		public override void OnResume()
 		{
 			base.OnResume();
@@ -36,7 +30,7 @@
 			_plotView.Model = _model;
 		}
 
-		protected override void OnSensorData(BandAccelerometerReading data)
+		protected override void OnSensorData(IBandAccelerometerReading data)
 		{
 			_seriesX.Points.Add(new DataPoint(_counter, data.AccelerationX));
 			_seriesY.Points.Add(new DataPoint(_counter, data.AccelerationY));
@@ -57,7 +51,7 @@
 		{
 			_model = new PlotModel()
 			{
-				Axes = { new LinearAxis { Position = AxisPosition.Left, Title = "Acceleration, m/s²", Minimum = -4.0, Maximum = 4.0}, 
+				Axes = { new LinearAxis { Position = AxisPosition.Left, Title = "Acceleration, m/s²" }, //Minimum = -4.0, Maximum = 4.0}, 
 					new LinearAxis { Position = AxisPosition.Bottom, Title = "Units" } 
 				}
 			};
