@@ -17,8 +17,8 @@
 		[InjectView(Resource.Id.levelImg)]
 		ImageView _levelImg;
 
-		private const int COLD_POINT = 1000;
-		private const int HOT_POINT  = 10000;
+		private const int MIN_TEMP = 0;
+		private const int MAX_TEMP = 25000;
 
 		private Color _imgColor;
 		private Color _txtColor;
@@ -29,10 +29,24 @@
 		{
 			_level.Text = $"{data.Brightness}";
 
-			// TODO: sensor range is smth like 0 - 25000, would be nice to map it nicely to color temperature
-			int r = data.Brightness < COLD_POINT ? Math.Min((byte)((double)data.Brightness / COLD_POINT * 255), (byte) 255) : 255;
-			int g = r;
-			int b = data.Brightness < COLD_POINT ? 0 : Math.Min((byte)((double)data.Brightness / HOT_POINT * 255), (byte) 255);
+			int r = 0, g = 0, b = 0;
+
+			// conversion to 'long rainbow' kindly found in internet ocean
+			double f = ((double)data.Brightness - MIN_TEMP) / (MAX_TEMP - MIN_TEMP);
+
+			var a = (1 - f) / 0.2;
+			var X = (int) Math.Floor(a);
+			var Y = (int) Math.Floor(255 * (a - X));
+
+			switch (X)
+			{
+				case 0: r = 255; g = Y; b = 0; break;
+				case 1: r = 255 - Y; g = 255; b = 0; break;
+				case 2: r = 0; g = 255; b = Y; break;
+				case 3: r = 0; g = 255 - Y; b = 255; break;
+				case 4: r = Y; g = 0; b = 255; break;
+				case 5: r = 255; g = 0; b = 255; break;
+			}
 
 			int iR = 255 - r, iG = 255 - g, iB = 255 - b;
 

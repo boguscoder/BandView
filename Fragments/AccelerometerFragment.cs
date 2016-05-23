@@ -20,7 +20,6 @@
 		private const int MAX_POINTS = 200;
 		private long _counter = 0;
 
-
 		protected override int LayoutId { get; } = Resource.Layout.Accelerometer;
 
 		public override void OnResume()
@@ -52,7 +51,7 @@
 			_model = new PlotModel()
 			{
 				Axes = { new LinearAxis { Position = AxisPosition.Left, Title = "Acceleration, m/s²" }, //Minimum = -4.0, Maximum = 4.0}, 
-					new LinearAxis { Position = AxisPosition.Bottom, Title = "Units" } 
+					new LinearAxis { Position = AxisPosition.Bottom, Title = "Time units" } 
 				}
 			};
 
